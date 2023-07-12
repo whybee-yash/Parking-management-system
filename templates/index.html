@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- HEADER SECTION -->
+    
+    <header >
+
+    <section class="header">
+        <!-- NAVIGATION BAR  -->
+        <nav>
+            <!-- LOGO
+            <a href="index.html"> <img src="logor.png" alt="logo" id="logo"> </a> -->
+
+            <div class="navlinks" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <!-- <li><a href="">HOME</a></li> -->
+                    
+                    <!-- <li><a href="/dashboard">USER</a></li> -->
+                    <li><a href="/search">SEARCH A VEHICLE</a></li>
+                    <li><a href="/dashboard">ADMIN LOGIN</a></li>
+                    <li><a href="/contact">CONTACT US</a></li>
+                    <li><a href="/slotstatus">CHECK SLOTS</a></li>
+                    <li><a href="/pricing">PRICING</a></li>
+                </ul>
+            </div>
+            <!-- MENU -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- MIDDLE TEXT -->
+        <div class="midtext">
+            <!-- <img  src="parking_logo.png" alt=""> -->
+            <img class="mid_parking_symbol" src="{{ url_for('static', filename='assets/img/parking_logo.png')}}">
+
+
+            <h1 style="font-family: 'Belanosima', sans-serif; font-size: larger;">PARKING MANAGEMENT SYSTEM</h1>
+            
+            <!-- <h3 style="font-family: 'Belanosima', sans-serif; font-size: small;">Parking cars have
+                 never been this easy</h3> -->
+            
+
+
+            <!-- <a href="" id="login" class="herobtn">Login </a>
+            <a href="" id="signup" class="herobtn">Sign Up </a> -->
+        </div>
+
+    </section>
+
+
+    
+
+    {% endblock %}

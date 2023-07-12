@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+
+    <!-- HEADER SECTION -->
+    <header >
+
+    <section class="header">
+        <!-- NAVIGATION BAR  -->
+        <nav>
+           
+
+            <div class="navlinks" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <!-- <li><a href="">HOME</a></li> -->
+                    
+                    <!-- <li><a href="/dashboard">USER</a></li> -->
+                    <li><a href="/index">HOME</a></li>
+                    <!-- <li><a href="/dashboard">ADMIN LOGIN</a></li> -->
+                    <li><a href="/logout">LOGOUT</a></li>
+                </ul>
+            </div>
+            <!-- MENU -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        
+        <div class="options">
+            <li><a class = "button" href="/addvehicle" style="font-family: 'Belanosima', sans-serif;">ADD A VEHICLE</a> </li>
+            <li><a class = "button" href="/removevehicle" style="font-family: 'Belanosima', sans-serif;">REMOVE A VEHICLE</a> </li>
+            <li><a class = "button" href="/parkedvehicles" style="font-family: 'Belanosima', sans-serif;">VIEW PARKED VEHICLES</a> </li>
+            <li><a class = "button" href="/details" style="font-family: 'Belanosima', sans-serif;">AMOUNT DETAILS</a> </li>
+        </div>
+
+    </section>
+
+
+    
+
+    {% endblock %}

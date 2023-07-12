@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- HEADER SECTION -->
+    <header >
+
+    <section class="header1">
+        <!-- NAVIGATION BAR  -->
+        <nav>
+            
+
+            <div class="navlinks" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/index">HOME</a></li>
+                    <li><a href="/dashboard">DASHBOARD</a></li>
+                    <li><a href="/logout">LOGOUT</a></li>
+                </ul>
+            </div>
+            <!-- MENU -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- MIDDLE TEXT -->
+        <div class="midtext">
+           
+            <img class="mid_parking_symbol" src="{{ url_for('static', filename='assets/img/parking_logo.png')}}">
+            <h1>PARKING AMOUNT DETAILS</h1>
+
+        </div>
+        
+
+
+
+    </section>
+
+    <div>
+    
+          <table class="table">
+            <thead>
+              <tr class="table-warning">
+                <th scope="col">Vehicle Type</th>
+                <th scope="col">Rate per hour</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+
+
+
+            <tr class="table-light">
+             
+                <td>Car</td>
+                <td>10 INR</td>
+             
+            </tr>
+
+            <tr class="table-light">
+             
+                <td>Bike</td>
+                <td>5 INR</td>
+             
+            </tr>
+        
+            </tbody>
+          </table>
+         
+    </div>
+
+
+{% endblock %}

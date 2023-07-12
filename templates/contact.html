@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header -->
+      <header class="header1" >
+      <div class="overlay"></div>
+      
+      
+
+      <nav>
+        <div class="navlinks" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="/index">HOME</a></li>
+              <li><a href="/dashboard">DASHBOARD</a></li>
+              <!-- <li><a href="/parkedvehicles" >VIEW PARKED VEHICLES</a> </li> -->
+            </ul>
+        </div>
+        <!-- MENU -->
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <!-- <div class="page-heading">
+              <h1 style="color:white">Contact Us</h1>
+              <br>
+              <span class="subheading"style="color:white">Have questions ?</span>
+            </div> -->
+            <div class="midtext1">
+              <h1>Contact Us</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form name="sentMessage" id="contactForm" action = "/contact" method="post" novalidate>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Name</label>
+                <input type="text" class="form-control" placeholder="Name" id="name" name='name' required data-validation-required-message="Please enter your name.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                
+                <label>Email Address</label>
+                <input type="email" class="form-control" placeholder="Email Address" id="email" name="email" required data-validation-required-message="Please enter your email address.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+
+
+
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                
+                <label>Phone Number</label>
+                <input type="tel" class="form-control" placeholder="Phone Number" name="phone" id="phone" required data-validation-required-message="Please enter your phone number.">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+
+            <div class="control-group">
+              <div class="form-group col-xs-12 floating-label-form-group controls">
+                
+                <label>Rating</label>
+                <input type="tel" class="form-control" placeholder="Provide Rating between ( 0 to 10 ) based upon our services" name="rating" id="rating" required data-validation-required-message="Please enter rating">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+
+
+
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                
+                <label>Message</label>
+                <textarea rows="5" class="form-control" placeholder="Message" name = "message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+

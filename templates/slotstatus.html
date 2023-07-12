@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- HEADER SECTION -->
+    <header >
+
+    <section class="header1">
+        <!-- NAVIGATION BAR  -->
+        <nav>
+            
+
+            <div class="navlinks" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                  
+                    <li><a href="/index">HOME</a></li>
+                    <li><a href="/dashboard">DASHBOARD</a></li>
+                    <!-- <li><a href="/parkedvehicles" >VIEW PARKED VEHICLES</a> </li> -->
+                </ul>
+            </div>
+            <!-- MENU -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- MIDDLE TEXT -->
+        <div class="midtext">
+           
+            <img class="mid_parking_symbol" src="{{ url_for('static', filename='assets/img/parking_logo.png')}}">
+            <h1>NUMBER OF AVAILABLE SLOTS</h1>
+            <h1 class="digit-box">{{slots}}</h1>
+
+        </div>
+        
+
+
+
+    </section>
+
+    <div>
+         
+    </div>
+
+
+{% endblock %}

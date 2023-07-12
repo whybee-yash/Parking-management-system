@@ -1,0 +1,11 @@
+{
+    "params":{
+        "local_server":"True",
+        "local_uri":"mysql+pymysql://root:@localhost/ParkingManagement",
+        "prod_uri":"mysql+pymysql://root:@localhost/ParkingManagement",
+        "gmail-user":"developernachiket@gmail.com",
+        "gmail-password":"Developer@4545",
+        "admin_user":"nachiket",
+        "admin_pass":"1234"
+    }
+}

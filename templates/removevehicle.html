@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header -->
+      <header class="header1">
+        <nav>
+            <div class="navlinks" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/dashboard">DASHBOARD</a></li>
+                    <!-- <li><a href="/index">HOME</a></li> -->
+                    <li><a href="/parkedvehicles" >VIEW PARKED VEHICLES</a> </li>
+                    <li><a href="/details" >AMOUNT DETAILS</a> </li>
+                </ul>
+            </div>
+            <!-- MENU -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+
+
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="midtext1">
+              <h1>Remove a Vehicle</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+
+
+    {% if message %}
+    <div class="alert alert-danger" role="alert">
+                {{ message }}
+    </div>
+    {% endif %}
+
+
+
+    
+    <!-- Main Content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <form name="sentMessage" id="contactForm" action = "/removevehicle" method="post" novalidate>
+
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label for="Vehicletype">Choose vehicle type :</label>
+                    <select name="vtype" id="vtype">
+                        <option value="car">CAR</option>
+                        <option value="bike">BIKE</option>
+                        <!-- <option value="cycle">Cycle</option> -->
+                      </select>
+
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+         
+            <div class="control-group">
+              <div class="form-group floating-label-form-group controls">
+                <label>Enter the vehicle's number</label>
+                <input type="text" class="form-control" placeholder="Vehicle Number" id="vehiclenum" name='vehiclenum' required data-validation-required-message="Please enter your vehicles number">
+                <p class="help-block text-danger"></p>
+              </div>
+            </div>
+
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  
+                  <label>Enter exit time: </label>
+                  <input type="text" class="form-control" placeholder="Exit time" id="exittime" name="exittime" required data-validation-required-message="Please enter exit time">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+
+              <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <!-- <label for="Vehicletype">Choose vehicle type :</label> -->
+                    <select id="timetype" name="timetype">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+  
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                  
+                  <label>Days passed if any else give zero : </label>
+                  <input type="text" class="form-control" placeholder="Days passed if any otherwise enter 0" id="days" name="days" required data-validation-required-message="Days passed if any ">
+                  <p class="help-block text-danger"></p>
+                </div>
+              </div>
+  
+            <br>
+            <div id="success"></div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary" id="sendMessageButton">Send</button>
+            </div>
+
+
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}
+

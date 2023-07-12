@@ -1,0 +1,162 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<!-- Page Header -->
+    <header class="header1" >
+    <div class="overlay"></div>
+    <style>
+      
+    
+.search_box{
+    display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+#searchbox {
+  font-size: 15px;
+  text-align: center;
+  height: 60px;
+  width: 555px;
+  padding: 3px;
+  border-radius: 6px;
+  border: none;
+}
+
+#searchbox:hover {
+  background-color: rgb(246, 244, 244);
+  border: none;
+}
+
+#btn {
+  text-align: center;
+  height: 35px;
+  width: 120px;
+  padding: 6px 22px;
+  margin: 17px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: red;
+  background-color: white;
+  border-radius: 6px;
+  border: none;
+}
+
+#btn:hover {
+  transform: scale(1.04);
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.midtext1{
+    font-size: 17px;
+}
+
+    </style>
+      
+      
+
+    <nav>
+        <div class="navlinks" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+              <li><a href="/index">HOME</a></li>
+              <li><a href="/dashboard">DASHBOARD</a></li>
+            </ul>
+        </div>
+
+        <!-- MENU -->
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+
+
+
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+
+            <div class="midtext1">
+              <!-- <h1>Search A Vehicle</h1> -->
+            </div>
+
+               
+          </div>
+        </div>
+    </div>
+
+
+    <div class="search_box">
+      <!-- Search bar -->
+      <form action="/search" method="POST">
+        <input type="text" name="vehiclenum" id="searchbox" placeholder="Search for Vehicle">
+        <button type="submit" id="btn">Search</button>
+      </form>
+      
+     
+    </div>
+    
+    <br>
+    <div class="Search_results" style="text-align: center; color: white;">
+      
+      {% if decider==1 %}
+      <h4>Search Results: Vehicle Found</h4>
+      
+
+      <ul>
+        <br>
+
+
+        <table class="table" style="color: white;">
+          <thead>
+            <tr>
+              <th >Serial No</th>
+              <th >Date</th>
+              <th >Vehicle Num</th>
+              <th >Vehicle Name</th>
+              <th >Phone Num</th>
+            </tr>
+
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <th>{{entry.Serial_num}}</th>
+              <td>{{entry.Date}}</td>
+              <td>{{entry.Vehicle_num}}</td>
+              <td>{{entry.Vehicle_name}}</td>
+              <td>{{entry.Phone_no}}</td>
+            </tr>
+
+          </tbody>
+
+        </table>
+        
+
+      </ul>
+      {% endif %}
+
+
+      {%if decider==0 %}
+      <h4>Search Results: Vehicle Not Found</h4>
+      {% endif %}
+
+
+      <h3</h3>
+
+
+    </div>
+    
+      
+    </div>
+    
+    </header>
+   
+    
+    <!-- Main Content -->
+    
+    
+{% endblock %}
+

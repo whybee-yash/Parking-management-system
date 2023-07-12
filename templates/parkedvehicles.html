@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+{% block body %}
+
+    <!-- HEADER SECTION -->
+    <header >
+
+    <section class="header1">
+        <!-- NAVIGATION BAR  -->
+        <nav>
+            
+
+            <div class="navlinks" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                  
+                    <li><a href="/dashboard">DASHBOARD</a></li>
+                    <li><a href="/removevehicle" >REMOVE VEHICLE</a> </li>
+                    <li><a href="/logout">LOGOUT</a></li>
+                </ul>
+            </div>
+            <!-- MENU -->
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- MIDDLE TEXT -->
+        <div class="midtext">
+           
+            <img class="mid_parking_symbol" src="{{ url_for('static', filename='assets/img/parking_logo.png')}}">
+            <h1>PARKED VEHICLES DETAILS</h1>
+
+        </div>
+        
+
+
+
+    </section>
+
+    <div>
+    
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Serial No</th>
+                <th scope="col">Date</th>
+                <th scope="col">Entry Time</th>
+                <th scope="col">Vehicle Num</th>
+                <th scope="col">Vehicle Name</th>
+                <th scope="col">Phone Num</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+
+
+
+            {%for post in posts%}
+              <tr>
+                <th scope="row">{{post.Serial_num}}</th>
+                <td>{{post.Date}}</td>
+                <td>{{post.Entry_time}}</td>
+                <td>{{post.Vehicle_num}}</td>
+                <td>{{post.Vehicle_name}}</td>
+                <td>{{post.Phone_no}}</td>
+              </tr>
+             
+              {% endfor%}
+
+
+
+
+            </tbody>
+          </table>
+         
+    </div>
+
+
+{% endblock %}
